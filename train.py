@@ -93,7 +93,7 @@ def train_(base_path):
         width_shift_range = 0.3,  # randomly shift images horizontally (fraction of total width)
         height_shift_range = 0.3,  # randomly shift images vertically (fraction of total height)
         zoom_range = 0.3,
-        shear_range = 0.3,
+        shear_range = 0.,
         horizontal_flip = True,  # randomly flip images
         vertical_flip = True,
         fill_mode = 'constant',
