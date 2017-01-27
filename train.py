@@ -2,7 +2,9 @@
 """
 Created on Fri Jan 27 19:12:53 2017
 
-@author: wolf4461
+@author: Weidi Xie
+
+@Description: This is the file used for training, loading images, annotation, training with model.
 """
 
 import numpy as np
