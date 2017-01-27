@@ -3,6 +3,9 @@
 Created on Fri Jan 27 19:13:36 2017
 
 @author: Weidi Xie
+
+@description: This is the file to create the model, similar as the paper, but with batch normalization and skip layers,
+make it more easier to train.
 """
 
 from __future__ import absolute_import
