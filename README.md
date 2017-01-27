@@ -5,9 +5,11 @@ Here I provide a new version of code for cell counting.
 Related papers:
 
 [1] Microscopy Cell Counting with Fully Convolutional Regression Networks.
+
 https://www.robots.ox.ac.uk/~vgg/publications/2015/Xie15/weidi15.pdf
 
 [2] U-Net: Convolutional Networks for Biomedical Image Segmentation
+
 https://arxiv.org/abs/1505.04597
 
 In [1,2] both architectures are fully convolutional, one is for cell counting and detection, while the other one is for cell segmentation.
