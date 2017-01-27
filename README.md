@@ -16,7 +16,8 @@ During the first several layers, the structure resembles the cannonical classifi
 In the second half of the architecture, the spatial resolution got back to the original size with upsampling operations.
 
 As everybody knows, deep learning is an extremely fast developing field, both papers were published over a year ago.
-So, here I provide an updated version of the paper[1].
+So, here I provide an updated version of the paper[1]. Batch normalization is used after each linear convolution to make the networks easier to train.
 
-Batch normalization is used after each linear convolution to make the networks easier to train, 
-if anybody is interested in the cell counting task, please use this version, which can make your life much much easier.
+The code is based on Keras with Tensorflow as backend, this is just a very naive version without any tuning on any dataset,
+however, it has already outperformed the results reported in [1].
+So, if anybody is interested in the cell counting task, please use this version, which can make your life much much easier.
