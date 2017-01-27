@@ -1,7 +1,7 @@
 # cell_counting_v2
 
 Here I provide a new version of code for cell counting.
-please download the synthetic cell dataset here :
+Please download the synthetic cell dataset here :
 
 http://www.robots.ox.ac.uk/~vgg/research/counting/
 
