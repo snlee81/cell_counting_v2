@@ -2,7 +2,7 @@
 """
 Created on Fri Jan 27 19:13:36 2017
 
-@author: wolf4461
+@author: Weidi Xie
 """
 
 from __future__ import absolute_import
