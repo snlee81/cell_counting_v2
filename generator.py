@@ -11,7 +11,7 @@ import scipy.ndimage as ndi
 # from six.moves import range
 import os
 import threading
-
+import matplotlib.pyplot as plt
 from keras import backend as K
 
 

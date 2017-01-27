@@ -30,14 +30,12 @@ anno = []
 def step_decay(epoch):
     step = 16
     num =  epoch // step 
-    if num % 4 == 0:
+    if num % 3 == 0:
         lrate = 1e-3
-    elif num % 4 == 1:
+    elif num % 3 == 1:
         lrate = 1e-4
-    elif num % 4 == 2:
-        lrate = 1e-5
     else:
-        lrate = 1e-6
+        lrate = 1e-5
         #lrate = initial_lrate * 1/(1 + decay * (epoch - num * step))
     print('Learning rate for epoch {} is {}.'.format(epoch+1, lrate))
     return np.float(lrate)
@@ -78,7 +76,9 @@ def train_(base_path):
     model = buildModel(input_dim = (256,256,3))
     model_checkpoint = ModelCheckpoint('cell_counting.hdf5', monitor='loss', save_best_only=True)
     model.summary()
-    
+    #model.load_weights('cell_counting.hdf5')
+    #A = model.predict(val_data)
+    #pdb.set_trace()
     print('...Fitting model...')
     print('-'*30)
     change_lr = LearningRateScheduler(step_decay)
@@ -89,10 +89,11 @@ def train_(base_path):
         featurewise_std_normalization = False,  # divide inputs by std of the dataset
         samplewise_std_normalization = False,  # divide each input by its std
         zca_whitening = False,  # apply ZCA whitening
-        rotation_range = 45,  # randomly rotate images in the range (degrees, 0 to 180)
-        width_shift_range = 0.2,  # randomly shift images horizontally (fraction of total width)
-        height_shift_range = 0.2,  # randomly shift images vertically (fraction of total height)
-        zoom_range = 0.2,
+        rotation_range = 30,  # randomly rotate images in the range (degrees, 0 to 180)
+        width_shift_range = 0.3,  # randomly shift images horizontally (fraction of total width)
+        height_shift_range = 0.3,  # randomly shift images vertically (fraction of total height)
+        zoom_range = 0.3,
+        shear_range = 0.3,
         horizontal_flip = True,  # randomly flip images
         vertical_flip = True,
         fill_mode = 'constant',
@@ -104,14 +105,14 @@ def train_(base_path):
                                      batch_size = 16
                                      ),
                         samples_per_epoch = train_data.shape[0],
-                        nb_epoch = 64,
-                        validation_data= (val_data, val_anno),
+                        nb_epoch = 48,
                         callbacks = [model_checkpoint, change_lr],
                        )
     
-    # When used for prediction.
-#    model.load_weights('cell_counting.hdf5')
-#    A = model.predict(val_data)
+    model.load_weights('cell_counting.hdf5')
+    A = model.predict(val_data)
+    mean_diff = (np.sum(A) - np.sum(val_anno)) / (100.0 * val_anno.shape[0] )
+    print('After training, the difference is : {} cells per image.'.format(np.abs(mean_diff)))
     
 if __name__ == '__main__':
     train_(base_path)
