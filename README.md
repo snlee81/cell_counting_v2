@@ -13,7 +13,7 @@ https://www.robots.ox.ac.uk/~vgg/publications/2015/Xie15/weidi15.pdf
 https://arxiv.org/abs/1505.04597
 
 In [1,2] both architectures are fully convolutional, one is for cell counting and detection, while the other one is for cell segmentation.
-The architectures consist of a down-sampling path (left) followed by an up-sampling path (right).
+The architectures consist of a down-sampling path followed by an up-sampling path.
 During the first several layers, the structure resembles the cannonical classification CNN.
 In the second half of the architecture, the spatial resolution got back to the original size with upsampling operations.
 
