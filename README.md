@@ -16,6 +16,7 @@ During the first several layers, the structure resembles the cannonical classifi
 In the second half of the architecture, the spatial resolution got back to the original size with upsampling operations.
 
 As everybody knows, deep learning is an extremely fast developing field, both papers were published over a year ago.
+Thus, though I think the idea shown in the paper is valuable, there is no reason why people should continue using the exact networks.
 So, here I provide an updated version of the paper[1]. Batch normalization is used after each linear convolution to make the networks easier to train.
 
 The code is based on Keras with Tensorflow as backend, this is just a very naive version without any tuning on any dataset,
