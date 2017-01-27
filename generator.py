@@ -3,6 +3,9 @@
 Created on Fri Jan 27 19:16:49 2017
 
 @author: Weidi Xie
+
+@description:
+This is used for augmentation on the fly.
 """
 import numpy as np
 import re
