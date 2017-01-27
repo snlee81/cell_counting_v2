@@ -102,7 +102,7 @@ def train_(base_path):
                                      batch_size = 16
                                      ),
                         samples_per_epoch = train_data.shape[0],
-                        nb_epoch = 48,
+                        nb_epoch = 96,
                         callbacks = [model_checkpoint, change_lr],
                        )
     
