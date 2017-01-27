@@ -22,5 +22,6 @@ Thus, though I think the idea shown in the paper is valuable, there is no reason
 So, here I provide an updated version of the paper[1]. Batch normalization is used after each linear convolution to make the networks easier to train.
 
 The code is based on Keras with Tensorflow as backend, this is just a very naive version without any tuning on any dataset,
-however, it has already performed as good as the networks reported in [1].
-So, if anybody is interested in the cell counting task, please use this version, which can make your life much much easier.
+however, it has already performed as good as the networks reported in [1]. (It gives me error about 1-4 cells/image)
+
+So, if anybody is interested in the cell counting task, please use this version, which can make your life much much easier. 
