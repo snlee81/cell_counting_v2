@@ -54,7 +54,6 @@ def _conv_bn_relu(nb_filter, row, col, subsample = (1,1)):
     return f
 
 def net_base(input, nb_filter = 64):
-    # Stream
     block1 = _conv_bn_relu(nb_filter,3,3)(input)
     pool1 = MaxPooling2D(pool_size=(2,2))(block1)
     # =========================================================================
@@ -77,7 +76,6 @@ def net_base(input, nb_filter = 64):
     return block7
 
 def buildModel (input_dim):
-    # This network is used to pre-train the optical flow.
     input_ = Input (shape = (input_dim))
     # =========================================================================
     act_ = net_base (input_, nb_filter = 64 )
