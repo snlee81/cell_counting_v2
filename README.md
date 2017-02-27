@@ -30,4 +30,4 @@ For simplicity, this code is based on Keras (https://github.com/fchollet/keras) 
 for instance, for all the layers, I simply use 64 kernels of 3x3, 
 however, it has already performed as good as the networks reported in [1]. (It gives me error about 1-4 cells/image)
 
-So, if anybody is interested in the cell counting task, please use this version, which can make your life much much easier. 
+So, if anybody is interested in the cell counting task, please edit on this version, which can make your life much much easier. 
