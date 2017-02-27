@@ -109,7 +109,7 @@ def train_(base_path):
     
     model.load_weights('cell_counting.hdf5')
     A = model.predict(val_data)
-    mean_diff = (np.sum(A) - np.sum(val_anno)) / (100.0 * val_anno.shape[0] )
+    mean_diff = np.average(np.abs(np.sum(np.sum(A,1),1)-np.sum(np.sum(val_anno,1),1))) / (100.0)
     print('After training, the difference is : {} cells per image.'.format(np.abs(mean_diff)))
     
 if __name__ == '__main__':
